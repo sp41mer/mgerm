@@ -24,7 +24,7 @@ else{
 
 if (isset($_POST['go_back']))
 	{ 
-		header ("Location: ".$_SESSION['url']);
+		header ("Location: admin.php");
 	}
 		
 	//������ ����� ������
@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
 <html>
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>������. ��������� ������</title>
+<title>Молине. Создание пользователя</title>
 <LINK rel='stylesheet' href='css/med_cert.css' type='text/css'>
 <link href="css/overcast/jquery-ui-1.10.4.custom.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -80,13 +80,13 @@ if(isset($_POST['submit']))
 	</tr>
         <tr>
 		<td>
-			<button type = "submit" name = "submit" class = "button_top" value = "���������"> ��������� </button>
+			<button type = "submit" name = "submit" class = "button_top" value = "���������"> Создать </button>
 
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<button type = "submit" name = "go_back" class = "button_top" >�����</button>
+			<button type = "submit" name = "go_back" class = "button_top" >Назад</button>
 		</td>
         </tr>
 		
@@ -107,10 +107,10 @@ if(isset($_POST['submit']))
         <table>
             <tr>
                 <td>
-                    ������ ������ ������ ������������������
-                   <br>"������ 3.1i"
+                    Модуль печати листка нетрудоспособности
+                   <br>"Молине 3.1i"
                 </td><td>
-                   <b>�������:<br>
+                   <b>Сегодня:<br>
                        <? echo (date("d-m-Y "));?></b>
                 </td>
             </tr>
@@ -125,7 +125,7 @@ if(isset($_POST['submit']))
 			
 		</table>
 		<div id="error1">
-		<p> ��������� ���� ��� ������������ ��� ������������
+		<p> Возникла ошибка
 		</div>
 		</div>
 	

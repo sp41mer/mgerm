@@ -16,7 +16,7 @@ if (isset($_COOKIE['hash']))
 
 <!DOCTYPE html>
 <html><head>
-<meta http-equiv="Content-Type" content="text/html" charset="utf-8" /><title>������ ������������������</title>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" /><title>Печать листка нетрудоспособности</title>
 <LINK rel='stylesheet' href='css/med_cert_print.css' type='text/css'>
 </head>
 <body>
@@ -29,10 +29,10 @@ if (isset($_COOKIE['hash']))
                 </td>
 		<td style="width: 50%; text-align: right;">
                        <button class= 'button_top'  title='������' onclick='window.print()'>
-                            ������</button>
+                            Печать</button>
                       <button class="button_top" onclick='window.location.replace("med_cert_list.php")'>
-                            � ������ ������� ������������������</button>
-                    <button class="button_top" onclick='window.location.replace("index.php")'>�����</button>
+                            К списку листков нетрудоспособности</button>
+                    <button class="button_top" onclick='window.location.replace("index.php")'>Выход</button>
 		</td>
 
 			
