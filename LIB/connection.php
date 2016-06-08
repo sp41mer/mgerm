@@ -1,5 +1,5 @@
 <?PHP
-mysql_connect("127.0.0.1:3307", "root", "root")
+mysql_connect("localhost:3306", "root", "root")
 or
 die("Could not connect: " . mysql_error());
 mysql_select_db("med_cert");
