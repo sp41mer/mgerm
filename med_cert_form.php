@@ -30,6 +30,7 @@ IF($machen == 5){
 //�������� ����
 $query = get_form_list_settings();//mysql_query("SELECT * FROM med_cert.form_list_settings");
 $i=0;
+    strip_tags($a);
 $form_list=array();
  while ($row = mysql_fetch_assoc($query)) { 
         $form_list[$i]["np"]= $row["uid"]; 

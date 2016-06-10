@@ -48,13 +48,13 @@ function prnt_fld3()
 			echo "<tr class = \"js-tr-to-show\">";
 			echo "<td colspan=\"2\" align = \"center\">";
 			echo "<form type=\"submit\" method = \"POST\" action = \"home.php\">";
-			echo "<button type = \"submit\" name = \"edit\" value = $znachenie> ������������� ���������� </button>"; //значение последнего выведенного поля(id в данном случае)
+			echo "<button type = \"submit\" name = \"edit\" value = $znachenie> Редактировать данные</button>"; //значение последнего выведенного поля(id в данном случае)
 			echo "</form>";
 			
 				if ($appr ==2) 
 				{
 					echo "<form type=\"submit\" method = \"POST\" action = \"admin.php\">";
-					echo "<button type = \"submit\" name = \"approve\" value = $znachenie> ����������� ����������� </button>";
+					echo "<button type = \"submit\" name = \"approve\" value = $znachenie> Подтвердить регистрацию </button>";
 					echo "</form>";
 					echo "</td>";
 				}	
