@@ -1,5 +1,5 @@
 <?PHP
-mysql_connect("kekpek", "root", "root")
+mysql_connect("0.0.0.0:5000", "user", "password")
 or
 die("Could not connect: " . mysql_error());
 mysql_select_db("med_cert");
