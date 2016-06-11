@@ -1,7 +1,7 @@
 <?PHP
 mysql_connect("0.0.0.0:5000", "user", "password")
 or
-die("Could not connect: " . mysql_error());
+die("Could not connect: MySQL error(86).");
 mysql_select_db("med_cert");
 mysql_query("SET NAMES utf8");
 
