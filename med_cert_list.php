@@ -28,7 +28,6 @@ IF(intval($_GET['delete'])==1){
 echo mysql_error();
 
 $query = get_list($sort,$way);//mysql_query("SELECT * FROM med_cert.form_list");
-
 $i=0;
 $list=array();
  while ($row = mysql_fetch_assoc($query)) { 

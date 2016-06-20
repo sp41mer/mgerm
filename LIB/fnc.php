@@ -109,7 +109,7 @@ function prnt_all($usr,$lng){
 }
 //��������� ������ ����� ��� ������� med_cert_form
 function get_form_list(){
-	return $query = mysql_query("SELECT * FROM med_cert.form_list");
+	return $query = mysql_query("SELECT * FROM med_cert.form_list ");
 }
 //������ �� �������� ���������� ������� med_cert_form
 function get_form_list_values(){
@@ -132,8 +132,24 @@ function get_list($sort,$way){
 	elseif ($way==-1){
 		$w=$w." DESC";
 	}
-	
-	return $query = mysql_query("SELECT t2.id,
+	$query2 = mysql_query("SELECT * FROM users WHERE id =  '".intval($_COOKIE['id'])."' LIMIT 1");
+	$data2 = mysql_fetch_assoc($query2);
+	$q = $data2['utype'];
+	if ($q!=1) {
+		return $query = mysql_query("SELECT t2.id,
+                                        MAX(IF(t1.num=7,t1.value,null)) as q7,
+                                        MAX(IF(t1.num=8,t1.value,null)) as q8,
+                                        MAX(IF(t1.num=9,t1.value,null)) as q9,
+                                        MAX(IF(t1.num=0,t1.value,null)) as q0,
+                                        t2.crtdt
+                                        FROM med_cert.sertificates as t1
+                                        LEFT JOIN med_cert.serts as t2 on t1.sert_id=t2.id
+                                        where t2.deleted=0 and t1.deleted=0 and t2.owner = '" . intval($_COOKIE['id']) . "'
+                                        GROUP BY t1.sert_id
+                                    ORDER BY $w");
+	}
+	else {
+		return $query = mysql_query("SELECT t2.id,
                                         MAX(IF(t1.num=7,t1.value,null)) as q7,
                                         MAX(IF(t1.num=8,t1.value,null)) as q8,
                                         MAX(IF(t1.num=9,t1.value,null)) as q9,
@@ -144,6 +160,7 @@ function get_list($sort,$way){
                                         where t2.deleted=0 and t1.deleted=0
                                         GROUP BY t1.sert_id
                                     ORDER BY $w");
+	}
 }
 //�������� ����������� ���� ��� ����� med_cert_form
 function get_form_data($lnid){
@@ -163,7 +180,8 @@ function delete_row_list($id){
 function new_sert(){ // �������� ����� ������
 		//�������� ������ �� 0 ������ ��� ��������� ������ � ��������
 		//� ������� ����� ������ � �������������� ������� � ��������
-    $user='1';
+
+	$user=intval($_COOKIE['id']);
 		$query = mysql_query("INSERT INTO med_cert.serts SET owner=$user
 								");
 		$last_insert=mysql_insert_id();
